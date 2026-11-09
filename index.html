@@ -1,103 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scroll Interaction</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Interaction</title>
 
-  <!-- Material Design 3: Roboto + Noto Sans KR + Material Symbols -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- [효과 3] 스크롤 진행률 (M3 Linear Progress Indicator) -->
-  <div class="progress" role="progressbar" aria-label="스크롤 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-    <div class="progress__bar"></div>
-  </div>
+    <!-- Pretendard 폰트 (CDN) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- [효과 3] 상단 스크롤 진행률 프로그래스 바 -->
+    <div class="progress" aria-hidden="true">
+      <div class="progress__bar"></div>
+    </div>
 
-  <!-- M3 Top App Bar -->
-  <header class="top-app-bar">
-    <span class="top-app-bar__title">Scroll</span>
-    <button class="icon-button state-layer" type="button" id="theme-toggle" aria-label="다크 모드 전환">
-      <span class="material-symbols-rounded" aria-hidden="true">dark_mode</span>
-    </button>
-  </header>
+    <main>
+      <!-- 히어로 -->
+      <section class="hero">
+        <!-- [효과 2] 패럴랙스 배경 이미지 (스크롤보다 느리게 움직임) -->
+        <div class="hero__bg" role="img" aria-label="안개 낀 산 풍경"></div>
 
-  <main>
-    <!-- 히어로 -->
-    <section class="hero">
-      <!-- [효과 2] 패럴랙스 배경 -->
-      <div class="hero__bg" role="img" aria-label="안개 낀 산 풍경"></div>
-
-      <div class="hero__content">
-        <span class="chip md-label-large reveal">
-          <span class="material-symbols-rounded" aria-hidden="true">swipe_up</span>
-          Scroll Interaction
-        </span>
-        <h1 class="md-display-large reveal">깃 허브에서 수정</h1>
-        <p class="md-body-large reveal">화면을 내려 보세요.<br />요소들이 하나씩 부드럽게 나타납니다.</p>
-        <div class="hero__actions reveal">
-          <a class="button button--filled state-layer" href="#cards">
-            <span class="material-symbols-rounded" aria-hidden="true">arrow_downward</span>
-            시작하기
-          </a>
-          <a class="button button--outlined state-layer" href="#last">마지막으로</a>
+        <div class="hero__content">
+          <!-- [효과 1] 페이드인 대상: .reveal -->
+          <h1 class="reveal">천천히, 스크롤</h1>
+          <p class="reveal">
+            화면을 내려 보세요.<br />요소들이 하나씩 부드럽게 나타납니다.
+          </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <div class="cards" id="cards">
       <!-- 섹션 1 -->
       <section class="section">
         <div class="section__text">
-          <span class="md-label-medium reveal">01</span>
-          <h2 class="md-headline-large reveal">여백</h2>
-          <p class="md-body-large reveal">덜어낼수록 또렷해집니다.<br />필요한 것만 남기고 나머지는 비워 둡니다.</p>
+          <h2 class="reveal">여백</h2>
+          <p class="reveal">
+            덜어낼수록 또렷해집니다.<br />필요한 것만 남기고 나머지는 비워
+            둡니다.
+          </p>
         </div>
         <figure class="section__image reveal">
-          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&q=80" alt="안개가 내려앉은 초록 언덕" loading="lazy" />
+          <img
+            src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&q=80"
+            alt="안개가 내려앉은 초록 언덕"
+            loading="lazy"
+          />
         </figure>
       </section>
 
       <!-- 섹션 2 -->
       <section class="section section--reverse">
         <div class="section__text">
-          <span class="md-label-medium reveal">02</span>
-          <h2 class="md-headline-large reveal">흐름</h2>
-          <p class="md-body-large reveal">스크롤은 하나의 이야기입니다.<br />위에서 아래로, 자연스럽게 이어집니다.</p>
+          <h2 class="reveal">흐름</h2>
+          <p class="reveal">
+            스크롤은 하나의 이야기입니다.<br />위에서 아래로, 자연스럽게
+            이어집니다.
+          </p>
         </div>
         <figure class="section__image reveal">
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80" alt="잔잔한 파도가 치는 해변" loading="lazy" />
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80"
+            alt="잔잔한 파도가 치는 해변"
+            loading="lazy"
+          />
         </figure>
       </section>
 
       <!-- 섹션 3 -->
-      <section class="section" id="last">
+      <section class="section">
         <div class="section__text">
-          <span class="md-label-medium reveal">03</span>
-          <h2 class="md-headline-large reveal">마무리</h2>
-          <p class="md-body-large reveal">끝까지 함께해 주셔서 감사합니다.<br />작은 움직임이 경험을 바꿉니다.</p>
-          <button class="button button--tonal state-layer reveal" type="button" data-scroll-top>
-            <span class="material-symbols-rounded" aria-hidden="true">replay</span>
-            처음으로
-          </button>
+          <h2 class="reveal">마무리</h2>
+          <p class="reveal">
+            끝까지 함께해 주셔서 감사합니다.<br />작은 움직임이 경험을 바꿉니다.
+          </p>
         </div>
         <figure class="section__image reveal">
-          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80" alt="햇살이 비치는 숲길" loading="lazy" />
+          <img
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80"
+            alt="햇살이 비치는 숲길"
+            loading="lazy"
+          />
         </figure>
       </section>
-    </div>
-  </main>
+    </main>
 
-  <!-- M3 Extended FAB -->
-  <button class="fab state-layer" type="button" data-scroll-top aria-label="맨 위로">
-    <span class="material-symbols-rounded" aria-hidden="true">arrow_upward</span>
-    <span class="fab__label md-label-large">맨 위로</span>
-  </button>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
